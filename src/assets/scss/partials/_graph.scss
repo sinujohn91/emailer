@@ -1,0 +1,116 @@
+.graph {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #e8ecf0;
+
+  &__label {
+    margin-bottom: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    color: #8397a7;
+  }
+
+  &__label__value {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #4c4c4c;
+  }
+
+  &__label__change {
+    margin-bottom: 0;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+    text-align: center;
+  }
+
+  &__graph {
+    border-left: 1px solid #59c2ef;
+    border-bottom: 1px solid #59c2ef;
+  }
+
+  &__bar {
+    background: #59c2ee;
+    background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);
+
+    &-container {
+      height: 75px;
+      padding-bottom: 0 !important;
+    }
+
+    &-container > table {
+      height: 100%;
+    }
+
+    &-container th {
+      vertical-align: bottom;
+    }
+  }
+
+  &__bar--two {
+    opacity: 0.25;
+  }
+
+  &__heading {
+    margin: 0;
+    margin-bottom: 0;
+  }
+
+  &__heading__value {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    color: #4c4c4c;
+  }
+
+  &__heading__label {
+    font-size: 10px;
+    font-weight: normal;
+    color: #8f8f8f;
+  }
+
+  &__sub-heading__value {
+    font-size: 9px;
+    font-weight: bold;
+  }
+
+  &__sub-heading__label {
+    font-size: 7px;
+    letter-spacing: 0.1px;
+    color: #6d6d6d;
+  }
+
+  &__legend {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background: #59c2ee;
+    background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);
+
+    &--previous {
+      opacity: 0.25;
+    }
+  }
+
+  &__legend__text {
+    font-size: 10px;
+    font-weight: normal;
+    color: #8397a7;
+  }
+
+  &--two {
+    .graph__graph {
+      border-bottom: 1px solid #e3e0e0;
+      border-left: 0;
+    }
+
+    .graph__bar-container {
+      height: 170px;
+    }
+  }
+}

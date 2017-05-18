@@ -1,0 +1,211 @@
+{
+  "subject": "something",
+  "publisher": "www.thequint.com",
+  "duration": "May 24 - May 30",
+  "dashboardUrl": "http://google.com",
+  "graphOne": {
+    "currentValue": "66,431",
+    "currentValueLabel": "Page Views",
+    "previousValue": "20,292",
+    "previousValueLabel": "Last Week",
+    "changeClass": "down",
+    "graph": [{
+      "barWidth": "14.28%",
+      "percentage": "20%",
+      "label": "M"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "70%",
+      "label": "T"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "50%",
+      "label": "W"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "80%",
+      "label": "T"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "30%",
+      "label": "F"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "60%",
+      "label": "S"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "80%",
+      "label": "S"
+    }]
+  },
+  "graphTwo": {
+    "currentValue": "4,234",
+    "currentValueLabel": "Page Views",
+    "previousValue": "1,292",
+    "previousValueLabel": "Last Week",
+    "changeClass": "up",
+    "graph": [{
+      "barWidth": "14.28%",
+      "percentage": "30%",
+      "label": "M"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "60%",
+      "label": "T"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "80%",
+      "label": "W"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "20%",
+      "label": "T"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "10%",
+      "label": "F"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "90%",
+      "label": "S"
+    }, {
+      "barWidth": "14.28%",
+      "percentage": "40%",
+      "label": "S"
+    }]
+  },
+  "graphThree": {
+    "heading": "Traffic sources",
+    "currentValue": "78,431",
+    "currentValueLabel": "Page Views",
+    "previousValue": "80,292",
+    "previousValueLabel": "Last Week",
+    "graph": [{
+      "percentage": {
+        "current": "70%",
+        "previous": "90%",
+        "change": "-20%"
+      },
+      "barWidth": "16.7%",
+      "label": "Social",
+      "value": "26,687",
+      "changeClass": "down"
+    }, {
+      "percentage": {
+        "current": "40%",
+        "previous": "80%",
+        "change": "-40%"
+      },
+      "barWidth": "16.7%",
+      "label": "Google",
+      "value": "20,168",
+      "changeClass": "down"
+    }, {
+      "percentage": {
+        "current": "90%",
+        "previous": "70%",
+        "change": "+20%"
+      },
+      "barWidth": "16.7%",
+      "label": "Facebook",
+      "value": "1,687",
+      "changeClass": "up"
+    }, {
+      "percentage": {
+        "current": "30%",
+        "previous": "40%",
+        "change": "+10%"
+      },
+      "barWidth": "16.7%",
+      "label": "Direct",
+      "value": "2,668",
+      "changeClass": "up"
+    }, {
+      "percentage": {
+        "current": "70%",
+        "previous": "80%",
+        "change": "-10%"
+      },
+      "barWidth": "16.7%",
+      "label": "Main",
+      "value": "6,777",
+      "changeClass": "down"
+    }, {
+      "percentage": {
+        "current": "40%",
+        "previous": "50%",
+        "change": "-10%"
+      },
+      "barWidth": "16.7%",
+      "label": "Others",
+      "value": "1,222",
+      "changeClass": "down"
+    }]
+  },
+  "listOne": {
+    "heading": "Top Articles",
+    "columneTwoHeading": "Article",
+    "columneThreeHeading": "Page Views",
+    "linkUrl": "http://google.com",
+    "linkLabel": "More Insights",
+    "list": [{
+      "serialNo": "1.",
+      "heading": "Bill Clinton Co-Authors Thriller Novel ‘The President Is Missing’",
+      "subHeading": "By Alok Prasanna Kumar on May 29",
+      "value": "4,356"
+    }, {
+      "serialNo": "2.",
+      "heading": "Baahubali 2: Who Killed Baahubali? Kattappa or SS Rajamouli?",
+      "subHeading": "By Priyanka Thirumurthi on May 24",
+      "value": "4,891"
+    }, {
+      "serialNo": "3.",
+      "heading": "Andhra MLA Moves Trees That Were Going to Be Axed, on His Own Dime",
+      "subHeading": "By Tanmoy Bhaduri on May 26",
+      "value": "3,243"
+    }, {
+      "serialNo": "4.",
+      "heading": "Sridevi Was the First Choice for Queen Sivagami in ‘Baahubali’",
+      "subHeading": "By Rajeev Kumar on May 25",
+      "value": "3,152"
+    }, {
+      "serialNo": "5.",
+      "heading": "SC Sentences Justice Karnan to 6-Month Jail For Contempt of Court",
+      "subHeading": "By Alok Prasanna Kumar on May 24",
+      "value": "2,342"
+    }]
+  },
+  "listTwo": {
+    "heading": "Top Authors",
+    "columneTwoHeading": "Author",
+    "columneThreeHeading": "Page Views",
+    "link": {
+      "url": "http://google.com",
+      "label": "More Insights"
+    },
+    "list": [{
+      "serialNo": "1.",
+      "heading": "Rajeev Kumar",
+      "subHeading": "17 stories this week",
+      "value": "4,356",
+      "change": "40%",
+      "changeClass": "up"
+    }, {
+      "serialNo": "2.",
+      "heading": "Alok Prasanna Kumar",
+      "subHeading": "12 stories this week",
+      "value": "4,891",
+      "change": "40%",
+      "changeClass": "up"
+    }, {
+      "serialNo": "3.",
+      "heading": "Priyanka Thirumurthi",
+      "subHeading": "19 stories this week",
+      "value": "3,243",
+      "change": "40%",
+      "changeClass": "down"
+    }]
+  }
+}
+

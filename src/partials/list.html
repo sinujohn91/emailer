@@ -1,0 +1,44 @@
+<row>
+  <columns>
+    <h3 class="email__sub-heading">{{email.listOne.heading}}</h3>
+  </columns>
+</row>
+<spacer size="15"></spacer>
+<row>
+  <columns>
+    <div class="list">
+      <row>
+        <columns small="1"></columns>
+        <columns small="9"><span class="list__heading">{{email.listOne.columneTwoHeading}}</span></columns>
+        <columns small="2"><p class="list__heading text-center">{{email.listOne.columneThreeHeading}}</p></columns>
+      </row>
+      <spacer size="20"></spacer>
+      {{#each email.listOne.list}}
+        <row>
+          <columns small="1"><span class="list__item-no">{{this.serialNo}}</span></columns>
+          <columns small="9">
+            <p class="list__item-name">{{this.heading}}</p>
+            <p class="list__item-sub-name">{{this.subHeading}}</p>
+          </columns>
+          <columns small="2" style="text-align: center">
+            <p class="list__item-value text-center">{{this.value}}</p>
+            {{#if this.change}}
+              <p class="list__item-change text-center {{this.changeClass}}">{{this.change}}</p>
+            {{/if}}
+          </columns>
+        </row>
+        {{#unless @last}}
+          <hr />
+        {{/unless}}
+      {{/each}}
+
+      <row>
+        <columns>
+          <p class="text-right">
+            <a href="{{email.listOne.link.url}}" class="list__item-link">{{email.listOne.link.label}}</a>
+          </p>
+        </columns>
+      </row>
+    </div>
+  </column>
+</row>

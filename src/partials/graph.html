@@ -1,0 +1,22 @@
+<div class="graph">
+  <p class="graph__heading">
+    <span class="graph__heading__value">{{email.graphone.currentValue}}</span>
+    <span class="graph__heading__label">{{email.graphone.currentValueLabel}}</span>
+  </p>
+  <p class="graph__sub-heading">
+    <span class="graph__sub-heading__value {{email.graphOne.changeClass}}">{{email.graphone.previousValue}}</span>
+    <span class="graph__sub-heading__label">{{email.graphone.previousValueLabel}}</span>
+  </p>
+  <row class="graph__graph">
+    {{#each email.graphone.graph}}
+      <td class="graph__bar-container" style="width: {{email.graphone.barWidth}}; padding: 0 5px; vertical-align: bottom">
+        <div class="graph__bar" style="height: {{this.percentage}}"></div>
+      </td>
+    {{/each}}
+  </row>
+  <row>
+    {{#each email.graphone.graph}}
+    <th class="graph__label">{{this.label}}</th>
+    {{/each}}
+  </row>
+</div>

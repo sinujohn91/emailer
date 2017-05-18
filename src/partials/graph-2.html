@@ -1,0 +1,44 @@
+<p class="email__sub-heading">{{email.graphthree.heading}}</p>
+<div class="graph graph--two">
+  <row>
+    <columns small="8">
+      <div class="text-left">
+        <p class="graph__heading">
+          <span class="graph__heading__value">{{email.graphthree.currentValue}}</span>
+          <span class="graph__heading__label">{{email.graphthree.currentValueLabel}}</span>
+        </p>
+        <p class="graph__sub-heading">
+          <span class="graph__sub-heading__value">{{email.graphthree.previousValue}}</span>
+          <span class="graph__sub-heading__label">{{email.graphthree.previousValueLabel}}</span>
+        </p>
+      </div>
+    </columns>
+    <columns small="4" valign="middle">
+      <span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">This week</span>
+      <span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">Last week</span>
+    </columns>
+  </row>
+  <row class="graph__graph">
+    {{#each email.graphthree.graph}}
+      <td class="graph__bar-container" style="width: {{email.graphthree.barWidth}}; padding: 0 1%; vertical-align: bottom">
+        <row>
+          <td style="vertical-align: bottom; padding: 0 5px;">
+            <div class="graph__bar" style="height: {{this.percentage.current}};"></div>
+          </td>
+          <td style="vertical-align: bottom; padding: 0 5px;">
+            <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};"></div>
+          </td>
+        </row>
+      </td>
+    {{/each}}
+  </row>
+  <row>
+    {{#each email.graphthree.graph}}
+      <th width="{{email.graphthree.barWidth}}">
+        <p class="graph__label">{{this.label}}</p>
+        <p class="graph__label__value">{{this.value}}</p>
+        <p class="graph__label__change {{this.changeClass}}">{{this.percentage.change}}</p>
+      </th>
+    {{/each}}
+  </row>
+</div>

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{{email.subject}}</title>
+  <!-- <style> -->
+</head>
+
+<body>
+  <table class="body">
+    <tr>
+      <td class="center" align="center" valign="top">
+        <center>
+          <center style="background: #0586d6; color: #fff">
+            <spacer size="30"></spacer>
+            Quintype <strong>Analytics</strong>
+            <spacer size="30"></spacer>
+          </center>
+          <center style="background: #0586d6">
+            <container>
+              <row>
+                <columns>
+                  <spacer size="45"></spacer>
+                  <center>
+                    <h1 class="email__heading">Your weekly Analysis Newsletter</h1></center>
+                  <center>
+                    <h2 class="email__publisher-name">{{{email.publisher}}} ({{{email.duration}}})</h2></center>
+                  <spacer size="40"></spacer>
+                </columns>
+              </row>
+            </container>
+          </center>
+          <container>
+            <row>
+              <columns large="6">
+                <div class="graph">
+                  <p class="graph__heading">
+                    <span class="graph__heading__value">{{graphOne.current_value}}</span>
+                    <span class="graph__heading__label">{{graphOne.current_value_label}}</span>
+                  </p>
+                  <p class="graph__sub-heading">
+                    <span class="graph__sub-heading__value"><span style="{{graphOne.change_color}}">{{graphOne.previous_value}}</span></span>
+                    <span class="graph__sub-heading__label">{{graphOne.previous_value_label}}</span>
+                  </p>
+                  <row class="graph__graph">
+                    {{#each graphOne.graph}}
+                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
+                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
+                    </td>
+                    {{/each}}
+                  </row>
+                  <row>
+                    {{#each graphOne.graph}}
+                    <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
+                    {{/each}}
+                  </row>
+                </div>
+              </columns>
+              <columns large="6">
+                <div class="graph">
+                  <p class="graph__heading">
+                    <span class="graph__heading__value">{{graphTwo.current_value}}</span>
+                    <span class="graph__heading__label">{{graphTwo.current_value_label}}</span>
+                  </p>
+                  <p class="graph__sub-heading">
+                    <span class="graph__sub-heading__value"><span style="{{graphTwo.change_color}}">{{graphTwo.previous_value}}</span></span>
+                    <span class="graph__sub-heading__label">{{graphTwo.previous_value_label}}</span>
+                  </p>
+                  <row class="graph__graph">
+                    {{#each graphTwo.graph}}
+                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
+                      <div class="graph__bar" style="height: {{this.percentage}}"></div>
+                    </td>
+                    {{/each}}
+                  </row>
+                  <row>
+                    {{#each graphTwo.graph}}
+                    <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
+                    {{/each}}
+                  </row>
+                </div>
+              </columns>
+            </row>
+            <spacer size="25"></spacer>
+            <center>
+              <button class="small radius" href="{{email.dashboard_url}}">Go to Dashboard</button>
+            </center>
+            <row>
+              <columns>
+                <h3 class="email__sub-heading">{{listOne.heading}}</h3>
+              </columns>
+            </row>
+            <spacer size="15"></spacer>
+            <row>
+              <columns>
+                <div class="list">
+                  <row>
+                    <columns small="1"></columns>
+                    <columns small="9"><span class="list__heading">{{listOne.column_two_heading}}</span></columns>
+                    <columns small="2">
+                      <p class="list__heading text-center">{{listOne.column_three_heading}}</p>
+                    </columns>
+                  </row>
+                  <spacer size="20"></spacer>
+                  {{#each listOne.list}}
+                  <row>
+                    <columns small="1"><span class="list__item-no">{{this.serial_no}}</span></columns>
+                    <columns small="9">
+                      <p class="list__item-name">{{this.heading}}</p>
+                      <p class="list__item-sub-name">{{this.sub_heading}}</p>
+                    </columns>
+                    <columns small="2" style="text-align: center">
+                      <p class="list__item-value text-center">{{this.value}}</p>
+                      {{#if this.change}}
+                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
+                      {{/if}}
+                    </columns>
+                  </row>
+                  {{#unless @last}}
+                  <hr /> {{/unless}} {{/each}}
+                  <row>
+                    <columns>
+                      <p class="text-right">
+                        <a href="{{listOne.linkUrl}}" class="list__item-link">{{listOne.linkLabel}}</a>
+                      </p>
+                    </columns>
+                  </row>
+                </div>
+                </column>
+            </row>
+            <spacer size="30"></spacer>
+            <row>
+              <columns>
+                <p class="email__sub-heading">{{graphThree.heading}}</p>
+                <div class="graph graph--two">
+                  <row>
+                    <columns small="8">
+                      <div class="text-left">
+                        <p class="graph__heading">
+                          <span class="graph__heading__value">{{graphThree.current_value}}</span>
+                          <span class="graph__heading__label">{{graphThree.current_value_label}}</span>
+                        </p>
+                        <p class="graph__sub-heading">
+                          <span class="graph__sub-heading__value">{{graphThree.previous_value}}</span>
+                          <span class="graph__sub-heading__label">{{graphThree.previous_value_label}}</span>
+                        </p>
+                      </div>
+                    </columns>
+                    <columns small="4" valign="middle">
+                      <span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">This week</span>
+                      <span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">Last week</span>
+                    </columns>
+                  </row>
+                  <row class="graph__graph">
+                    {{#each graphThree.graph}}
+                    <td class="graph__bar-container" style="height: 170px; width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
+                      <row>
+                        <td style="vertical-align: bottom; padding: 0 5px;">
+                          <div class="graph__bar" style="height: {{this.percentage.current}};"></div>
+                        </td>
+                        <td style="vertical-align: bottom; padding: 0 5px;">
+                          <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};"></div>
+                        </td>
+                      </row>
+                    </td>
+                    {{/each}}
+                  </row>
+                  <row>
+                    {{#each graphThree.graph}}
+                    <th width="{{this.bar_width}}">
+                      <p class="graph__label">{{this.label}}</p>
+                      <p class="graph__label__value">{{this.value}}</p>
+                      <p class="graph__label__change"><span style="{{this.change_color}}">{{this.percentage.change}}</span></p>
+                    </th>
+                    {{/each}}
+                  </row>
+                </div>
+              </columns>
+            </row>
+            <spacer size="30"></spacer>
+            <row>
+              <columns>
+                <h3 class="email__sub-heading">{{listTwo.heading}}</h3>
+              </columns>
+            </row>
+            <spacer size="15"></spacer>
+            <row>
+              <columns>
+                <div class="list">
+                  <row>
+                    <columns small="1"></columns>
+                    <columns small="9"><span class="list__heading">{{listTwo.column_two_heading}}</span></columns>
+                    <columns small="2">
+                      <p class="list__heading text-center">{{listTwo.column_three_heading}}</p>
+                    </columns>
+                  </row>
+                  <spacer size="20"></spacer>
+                  {{#each listTwo.list}}
+                  <row>
+                    <columns small="1"><span class="list__item-no">{{this.serial_no}}</span></columns>
+                    <columns small="9">
+                      <p class="list__item-name">{{this.heading}}</p>
+                      <p class="list__item-sub-name">{{this.sub_heading}}</p>
+                    </columns>
+                    <columns small="2" style="text-align: center">
+                      <p class="list__item-value text-center">{{this.value}}</p>
+                      {{#if this.change}}
+                      <p class="list__item-change text-center"><span style="{{this.change_color}}">{{this.change}}</span></p>
+                      {{/if}}
+                    </columns>
+                  </row>
+                  {{#unless @last}}
+                  <hr /> {{/unless}} {{/each}}
+                  <row>
+                    <columns>
+                      <p class="text-right">
+                        <a href="{{listTwo.linkUrl}}" class="list__item-link">{{listTwo.linkLabel}}</a>
+                      </p>
+                    </columns>
+                  </row>
+                </div>
+                </column>
+            </row>
+            <spacer size="30"></spacer>
+            <center>
+              <button class="small radius" href="{{email.dashboard_url}}">Go to Dashboard</button>
+            </center>
+            <spacer size="35"></spacer>
+          </container>
+          <spacer size="20px"></spacer>
+          <center>
+            <a class="footer__link" href="#">Polltype</a>
+            <span class="footer__divider"></span>
+            <a class="footer__link" href="#">Quintype</a>
+          </center>
+          <spacer size="25px"></spacer>
+        </center>
+      </td>
+    </tr>
+  </table>
+  <!-- prevent Gmail on iOS font size manipulation -->
+  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+</body>
+
+</html>
