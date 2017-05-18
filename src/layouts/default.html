@@ -44,13 +44,13 @@
                     <span class="graph__heading__label">{{graphOne.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="{{graphOne.change_color}}">{{graphOne.previous_value}}</span></span>
+                    <span class="graph__sub-heading__value"><span style="color: {{graphOne.change_color}}">{{graphOne.previous_value}}</span></span>
                     <span class="graph__sub-heading__label">{{graphOne.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
                     {{#each graphOne.graph}}
                     <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
-                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
+                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
@@ -68,13 +68,13 @@
                     <span class="graph__heading__label">{{graphTwo.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="{{graphTwo.change_color}}">{{graphTwo.previous_value}}</span></span>
+                    <span class="graph__sub-heading__value"><span style="color: {{graphTwo.change_color}}">{{graphTwo.previous_value}}</span></span>
                     <span class="graph__sub-heading__label">{{graphTwo.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
                     {{#each graphTwo.graph}}
                     <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
-                      <div class="graph__bar" style="height: {{this.percentage}}"></div>
+                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
@@ -88,7 +88,8 @@
             </row>
             <spacer size="25"></spacer>
             <center>
-              <button class="small radius" href="{{email.dashboard_url}}">Go to Dashboard</button>
+              <!-- copy and replace this button code with the generated button code for the second button -->
+              <button class="radius small" href="{{email.dashboard_url}}">Go to Dashboard</button>
             </center>
             <row>
               <columns>
@@ -126,7 +127,7 @@
                   <row>
                     <columns>
                       <p class="text-right">
-                        <a href="{{listOne.linkUrl}}" class="list__item-link">{{listOne.linkLabel}}</a>
+                        <a href="{{listOne.link_url}}" class="list__item-link">{{listOne.link_label}}</a>
                       </p>
                     </columns>
                   </row>
@@ -161,10 +162,10 @@
                     <td class="graph__bar-container" style="height: 170px; width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
                       <row>
                         <td style="vertical-align: bottom; padding: 0 5px;">
-                          <div class="graph__bar" style="height: {{this.percentage.current}};"></div>
+                          <div class="graph__bar" style="height: {{this.percentage.current}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
                         </td>
                         <td style="vertical-align: bottom; padding: 0 5px;">
-                          <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};"></div>
+                          <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                         </td>
                       </row>
                     </td>
@@ -175,7 +176,7 @@
                     <th width="{{this.bar_width}}">
                       <p class="graph__label">{{this.label}}</p>
                       <p class="graph__label__value">{{this.value}}</p>
-                      <p class="graph__label__change"><span style="{{this.change_color}}">{{this.percentage.change}}</span></p>
+                      <p class="graph__label__change"><span style="color: {{this.change_color}}">{{this.percentage.change}}</span></p>
                     </th>
                     {{/each}}
                   </row>
@@ -210,7 +211,7 @@
                     <columns small="2" style="text-align: center">
                       <p class="list__item-value text-center">{{this.value}}</p>
                       {{#if this.change}}
-                      <p class="list__item-change text-center"><span style="{{this.change_color}}">{{this.change}}</span></p>
+                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
                       {{/if}}
                     </columns>
                   </row>
@@ -219,7 +220,7 @@
                   <row>
                     <columns>
                       <p class="text-right">
-                        <a href="{{listTwo.linkUrl}}" class="list__item-link">{{listTwo.linkLabel}}</a>
+                        <a href="{{listTwo.link_url}}" class="list__item-link">{{listTwo.link_label}}</a>
                       </p>
                     </columns>
                   </row>
@@ -228,15 +229,15 @@
             </row>
             <spacer size="30"></spacer>
             <center>
-              <button class="small radius" href="{{email.dashboard_url}}">Go to Dashboard</button>
+              <button class="radius small" href="{{email.dashboard_url}}">Go to Dashboard</button>
             </center>
             <spacer size="35"></spacer>
           </container>
           <spacer size="20px"></spacer>
           <center>
-            <a class="footer__link" href="#">Polltype</a>
+            <a class="footer__link" href="{{email.polltype_url}}">Polltype</a>
             <span class="footer__divider"></span>
-            <a class="footer__link" href="#">Quintype</a>
+            <a class="footer__link" href="{{email.quintype_url}}">Quintype</a>
           </center>
           <spacer size="25px"></spacer>
         </center>
