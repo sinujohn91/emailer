@@ -102,9 +102,12 @@
                 <div class="list">
                   <row>
                     <columns small="1"></columns>
-                    <columns small="9"><span class="list__heading">{{listOne.column_two_heading}}</span></columns>
+                    <columns small="7"><span class="list__heading">{{listOne.column_two_heading}}</span></columns>
                     <columns small="2">
                       <p class="list__heading text-center">{{listOne.column_three_heading}}</p>
+                    </columns>
+                    <columns small="2">
+                      <p class="list__heading text-center">{{listOne.column_four_heading}}</p>
                     </columns>
                   </row>
                   <spacer size="20"></spacer>
@@ -117,6 +120,9 @@
                     </columns>
                     <columns small="2" style="text-align: center">
                       <p class="list__item-value text-center">{{this.value}}</p>
+                    </columns>
+                    <columns small="2" style="text-align: center">
+                      <p class="list__item-value text-center">{{this.uniques}}</p>
                       {{#if this.change}}
                       <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
                       {{/if}}
@@ -159,12 +165,12 @@
                   </row>
                   <row class="graph__graph">
                     {{#each graphThree.graph}}
-                    <td class="graph__bar-container" style="height: 170px; width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
+                    <td class="graph__bar-container" style="width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
                       <row>
-                        <td style="vertical-align: bottom; padding: 0 5px;">
+                        <td style="height: 170px; vertical-align: bottom; padding: 0 5px;">
                           <div class="graph__bar" style="height: {{this.percentage.current}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
                         </td>
-                        <td style="vertical-align: bottom; padding: 0 5px;">
+                        <td style="height: 170px; vertical-align: bottom; padding: 0 5px;">
                           <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                         </td>
                       </row>
@@ -195,22 +201,34 @@
                 <div class="list">
                   <row>
                     <columns small="1"></columns>
-                    <columns small="9"><span class="list__heading">{{listTwo.column_two_heading}}</span></columns>
+                    <columns small="7"><span class="list__heading">{{listTwo.column_two_heading}}</span></columns>
                     <columns small="2">
                       <p class="list__heading text-center">{{listTwo.column_three_heading}}</p>
+                    </columns>
+                    <columns small="2">
+                      <p class="list__heading text-center">{{listTwo.column_four_heading}}</p>
                     </columns>
                   </row>
                   <spacer size="20"></spacer>
                   {{#each listTwo.list}}
                   <row>
                     <columns small="1"><span class="list__item-no">{{this.serial_no}}</span></columns>
-                    <columns small="9">
+                    <columns small="7">
                       <p class="list__item-name">{{this.heading}}</p>
                       <p class="list__item-sub-name">{{this.sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
                       <p class="list__item-value text-center">{{this.value}}</p>
-                      {{#if this.change}}
+                      {{#if this.change}}%
+                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
+                      {{/if}}
+                    </columns>
+                    <columns small="2" style="text-align: center">
+                      <p class="list__item-value text-center">{{this.value}}</p>
+                    </columns>
+                    <columns small="2" style="text-align: center">
+                      <p class="list__item-value text-center">{{this.uniques}}</p>
+                      {{#if this.change}}%
                       <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
                       {{/if}}
                     </columns>

@@ -58,7 +58,7 @@ Run `npm run litmus` to build as above, then submit to litmus for testing. *AWS 
 
 Run `npm run mail` to build as above, then send to specified email address for testing. *SMTP server details required (config.json)*
 
-Run `npm run zip` to build as above, then zip HTML and images for easy deployment to email marketing services. 
+Run `npm run zip` to build as above, then zip HTML and images for easy deployment to email marketing services.
 
 ### Speeding Up Your Build
 
@@ -127,4 +127,240 @@ Similar to the Litmus tests, you can have the emails sent to a specified email a
 For a full list of Litmus' supported test clients(applications) see their [client list](https://litmus.com/emails/clients.xml).
 
 **Caution:** AWS Service Fees will result, however, are usually very low do to minimal traffic. Use at your own discretion.
+
+
+## data should be in this format
+```json
+[{ "name": "email",
+  "content": {
+    "subject": "something",
+    "publisher": "www.thequint.com",
+    "duration": "May 24 - May 30",
+    "dashboard_url": "http://google.com",
+    "polltype_url": "http://facebook.com",
+    "quintype_url": "http://yahoo.com"
+  }
+}, {
+  "name": "listTwo",
+  "content": {
+    "heading": "Top Authors",
+    "column_two_heading": "Author",
+    "column_three_heading": "Page Views",
+    "link_url": "http://google.com",
+    "link_label": "More Insights",
+    "list": [{
+      "serial_no": "1.",
+      "heading": "Rajeev Kumar",
+      "sub_heading": "17 stories this week",
+      "value": "4,356",
+      "uniques": "3,345",
+      "change": "40%",
+      "change_color": "#20c8a0"
+    }, {
+      "serial_no": "2.",
+      "heading": "Alok Prasanna Kumar",
+      "sub_heading": "12 stories this week",
+      "value": "4,891",
+      "uniques": "2,345",
+      "change": "40%",
+      "change_color": "#20c8a0"
+    }, {
+      "serial_no": "3.",
+      "heading": "Priyanka Thirumurthi",
+      "sub_heading": "19 stories this week",
+      "value": "3,243",
+      "uniques": "2,345",
+      "change": "40%",
+      "change_color": "#e74c3c"
+    }]
+  }
+}, {
+  "name": "graphOne",
+  "content": {
+    "current_value": "66,431",
+    "current_value_label": "Page Views",
+    "previous_value": "20,292",
+    "previous_value_label": "Last Week",
+    "change_color": "#e74c3c",
+    "graph": [{
+      "bar_width": "14.28%",
+      "percentage": "20%",
+      "label": "M"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "70%",
+      "label": "T"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "50%",
+      "label": "W"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "80%",
+      "label": "T"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "30%",
+      "label": "F"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "60%",
+      "label": "S"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "80%",
+      "label": "S"
+    }]
+  }
+}, {
+  "name": "graphTwo",
+  "content": {
+    "current_value": "4,234",
+    "current_value_label": "Page Views",
+    "previous_value": "1,292",
+    "previous_value_label": "Last Week",
+    "change_color": "#20c8a0",
+    "graph": [{
+      "bar_width": "14.28%",
+      "percentage": "30%",
+      "label": "M"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "60%",
+      "label": "T"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "80%",
+      "label": "W"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "20%",
+      "label": "T"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "10%",
+      "label": "F"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "90%",
+      "label": "S"
+    }, {
+      "bar_width": "14.28%",
+      "percentage": "40%",
+      "label": "S"
+    }]
+  }
+}, {
+  "name": "graphThree",
+  "content": {
+    "heading": "Traffic sources",
+    "current_value": "78,431",
+    "current_value_label": "Page Views",
+    "previous_value": "80,292",
+    "previous_value_label": "Last Week",
+    "graph": [{
+      "percentage": {
+        "current": "70%",
+        "previous": "90%",
+        "change": "-20%"
+      },
+      "bar_width": "16.7%",
+      "label": "Social",
+      "value": "26,687",
+      "change_color": "#e74c3c"
+    }, {
+      "percentage": {
+        "current": "40%",
+        "previous": "80%",
+        "change": "-40%"
+      },
+      "bar_width": "16.7%",
+      "label": "Google",
+      "value": "20,168",
+      "change_color": "#e74c3c"
+    }, {
+      "percentage": {
+        "current": "90%",
+        "previous": "70%",
+        "change": "+20%"
+      },
+      "bar_width": "16.7%",
+      "label": "Facebook",
+      "value": "1,687",
+      "change_color": "#20c8a0"
+    }, {
+      "percentage": {
+        "current": "30%",
+        "previous": "40%",
+        "change": "+10%"
+      },
+      "bar_width": "16.7%",
+      "label": "Direct",
+      "value": "2,668",
+      "change_color": "#20c8a0"
+    }, {
+      "percentage": {
+        "current": "70%",
+        "previous": "80%",
+        "change": "-10%"
+      },
+      "bar_width": "16.7%",
+      "label": "Main",
+      "value": "6,777",
+      "change_color": "#e74c3c"
+    }, {
+      "percentage": {
+        "current": "40%",
+        "previous": "50%",
+        "change": "-10%"
+      },
+      "bar_width": "16.7%",
+      "label": "Others",
+      "value": "1,222",
+      "change_color": "#e74c3c"
+    }]
+  }
+}, {
+  "name": "listOne",
+  "content": {
+    "heading": "Top Articles",
+    "column_two_heading": "Article",
+    "column_three_heading": "Page Views",
+    "link_url": "http://google.com",
+    "link_label": "More Insights",
+    "list": [{
+      "serial_no": "1.",
+      "heading": "Bill Clinton Co-Authors Thriller Novel ‘The President Is Missing’",
+      "sub_heading": "By Alok Prasanna Kumar on May 29",
+      "value": "4,356",
+      "uniques": "2,345"
+    }, {
+      "serial_no": "2.",
+      "heading": "Baahubali 2: Who Killed Baahubali? Kattappa or SS Rajamouli?",
+      "sub_heading": "By Priyanka Thirumurthi on May 24",
+      "value": "4,891",
+      "uniques": "2,345"
+    }, {
+      "serial_no": "3.",
+      "heading": "Andhra MLA Moves Trees That Were Going to Be Axed, on His Own Dime",
+      "sub_heading": "By Tanmoy Bhaduri on May 26",
+      "value": "3,243",
+      "uniques": "2,345"
+    }, {
+      "serial_no": "4.",
+      "heading": "Sridevi Was the First Choice for Queen Sivagami in ‘Baahubali’",
+      "sub_heading": "By Rajeev Kumar on May 25",
+      "value": "3,152",
+      "uniques": "2,345"
+    }, {
+      "serial_no": "5.",
+      "heading": "SC Sentences Justice Karnan to 6-Month Jail For Contempt of Court",
+      "sub_heading": "By Alok Prasanna Kumar on May 24",
+      "value": "2,342",
+      "uniques": "2,345"
+    }]
+  }
+}]
+
+```
 
