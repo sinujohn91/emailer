@@ -131,6 +131,8 @@ Replace the first button generated code with the second button generated code.
     "current_value_label": "Page Views",
     "previous_value": "80,292",
     "previous_value_label": "Last Week",
+    "current_label_indicator":  "This Week"
+    "previous_label_indicator":  "Last Week"
     "graph": [{
       "percentage": {
         "current": "70",
