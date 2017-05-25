@@ -49,14 +49,14 @@
                   </p>
                   <row class="graph__graph">
                     {{#each na_graphOne.graph}}
-                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
-                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
+                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}%; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
+                      <div class="graph__bar" style="height: {{this.bar_height_percentage}}%; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
                   <row>
                     {{#each na_graphOne.graph}}
-                    <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
+                    <th class="graph__label" width="{{this.bar_width}}%">{{this.label}}</th>
                     {{/each}}
                   </row>
                 </div>
@@ -73,14 +73,14 @@
                   </p>
                   <row class="graph__graph">
                     {{#each na_graphTwo.graph}}
-                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
-                      <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
+                    <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}%; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
+                      <div class="graph__bar" style="height: {{this.bar_height_percentage}}%; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
                   <row>
                     {{#each na_graphTwo.graph}}
-                    <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
+                    <th class="graph__label" width="{{this.bar_width}}%">{{this.label}}</th>
                     {{/each}}
                   </row>
                 </div>
@@ -113,8 +113,8 @@
                   <spacer size="20"></spacer>
                   {{#each na_listOne.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{@index}}.</span></columns>
-                    <columns small="9">
+                    <columns small="1"><span class="list__item-no">{{@index + 1}}.</span></columns>
+                    <columns small="7">
                       <p class="list__item-name">{{this.heading}}</p>
                       <p class="list__item-sub-name">{{this.sub_heading}}</p>
                     </columns>
@@ -124,7 +124,7 @@
                     <columns small="2" style="text-align: center">
                       <p class="list__item-value text-center">{{this.visits}}</p>
                       {{#if this.change}}
-                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
+                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}%</span></p>
                       {{/if}}
                     </columns>
                   </row>
@@ -165,13 +165,13 @@
                   </row>
                   <row class="graph__graph">
                     {{#each na_graphThree.graph}}
-                    <td class="graph__bar-container" style="width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
+                    <td class="graph__bar-container" style="width: {{this.bar_width}}%; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
                       <row>
                         <td style="height: 170px; vertical-align: bottom; padding: 0 5px;">
-                          <div class="graph__bar" style="height: {{this.percentage.current}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
+                          <div class="graph__bar" style="height: {{this.percentage.current}}%;background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);"></div>
                         </td>
                         <td style="height: 170px; vertical-align: bottom; padding: 0 5px;">
-                          <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}};background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
+                          <div class="graph__bar graph__bar--two" style="height: {{this.percentage.previous}}%;background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                         </td>
                       </row>
                     </td>
@@ -179,10 +179,10 @@
                   </row>
                   <row>
                     {{#each na_graphThree.graph}}
-                    <th width="{{this.bar_width}}">
+                    <th width="{{this.bar_width}}%">
                       <p class="graph__label">{{this.label}}</p>
                       <p class="graph__label__value">{{this.value}}</p>
-                      <p class="graph__label__change"><span style="color: {{this.change_color}}">{{this.percentage.change}}</span></p>
+                      <p class="graph__label__change"><span style="color: {{this.change_color}}">{{this.percentage.change}}%</span></p>
                     </th>
                     {{/each}}
                   </row>
@@ -212,7 +212,7 @@
                   <spacer size="20"></spacer>
                   {{#each na_listTwo.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{@index}}.</span></columns>
+                    <columns small="1"><span class="list__item-no">{{@index + 1}}.</span></columns>
                     <columns small="7">
                       <p class="list__item-name">{{this.heading}}</p>
                       <p class="list__item-sub-name">{{this.sub_heading}}</p>
@@ -222,8 +222,8 @@
                     </columns>
                     <columns small="2" style="text-align: center">
                       <p class="list__item-value text-center">{{this.visits}}</p>
-                      {{#if this.change}}%
-                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
+                      {{#if this.change}}
+                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}%</span></p>
                       {{/if}}
                     </columns>
                   </row>
