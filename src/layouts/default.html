@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>{{email.subject}}</title>
+  <title>{{na_email.heading}}</title>
   <!-- <style> -->
 </head>
 
@@ -27,9 +27,9 @@
                 <columns>
                   <spacer size="45"></spacer>
                   <center>
-                    <h1 class="email__heading">Your weekly Analysis Newsletter</h1></center>
+                    <h1 class="email__heading">{{na_email.heading}}</h1></center>
                   <center>
-                    <h2 class="email__publisher-name">{{{email.publisher}}} ({{{email.duration}}})</h2></center>
+                    <h2 class="email__publisher-name">{{na_email.publisher}} ({{na_email.duration}})</h2></center>
                   <spacer size="40"></spacer>
                 </columns>
               </row>
@@ -40,22 +40,22 @@
               <columns large="6">
                 <div class="graph">
                   <p class="graph__heading">
-                    <span class="graph__heading__value">{{graphOne.current_value}}</span>
-                    <span class="graph__heading__label">{{graphOne.current_value_label}}</span>
+                    <span class="graph__heading__value">{{na_graphOne.current_value}}</span>
+                    <span class="graph__heading__label">{{na_graphOne.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="color: {{graphOne.change_color}}">{{graphOne.previous_value}}</span></span>
-                    <span class="graph__sub-heading__label">{{graphOne.previous_value_label}}</span>
+                    <span class="graph__sub-heading__value"><span style="color: {{na_graphOne.change_color}}">{{na_graphOne.previous_value}}</span></span>
+                    <span class="graph__sub-heading__label">{{na_graphOne.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
-                    {{#each graphOne.graph}}
+                    {{#each na_graphOne.graph}}
                     <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
                       <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
                   <row>
-                    {{#each graphOne.graph}}
+                    {{#each na_graphOne.graph}}
                     <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
                     {{/each}}
                   </row>
@@ -64,22 +64,22 @@
               <columns large="6">
                 <div class="graph">
                   <p class="graph__heading">
-                    <span class="graph__heading__value">{{graphTwo.current_value}}</span>
-                    <span class="graph__heading__label">{{graphTwo.current_value_label}}</span>
+                    <span class="graph__heading__value">{{na_graphTwo.current_value}}</span>
+                    <span class="graph__heading__label">{{na_graphTwo.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="color: {{graphTwo.change_color}}">{{graphTwo.previous_value}}</span></span>
-                    <span class="graph__sub-heading__label">{{graphTwo.previous_value_label}}</span>
+                    <span class="graph__sub-heading__value"><span style="color: {{na_graphTwo.change_color}}">{{na_graphTwo.previous_value}}</span></span>
+                    <span class="graph__sub-heading__label">{{na_graphTwo.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
-                    {{#each graphTwo.graph}}
+                    {{#each na_graphTwo.graph}}
                     <td class="graph__bar-container" style="height: 75px; width: {{this.bar_width}}; padding: 0 5px; vertical-align: bottom; padding-bottom: 0 !important;">
                       <div class="graph__bar" style="height: {{this.percentage}}; background: #59c2ee; background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee); opacity: 0.25"></div>
                     </td>
                     {{/each}}
                   </row>
                   <row>
-                    {{#each graphTwo.graph}}
+                    {{#each na_graphTwo.graph}}
                     <th class="graph__label" width="{{this.bar_width}}">{{this.label}}</th>
                     {{/each}}
                   </row>
@@ -93,7 +93,7 @@
             </center>
             <row>
               <columns>
-                <h3 class="email__sub-heading">{{listOne.heading}}</h3>
+                <h3 class="email__sub-heading">{{na_listOne.heading}}</h3>
               </columns>
             </row>
             <spacer size="15"></spacer>
@@ -102,27 +102,27 @@
                 <div class="list">
                   <row>
                     <columns small="1"></columns>
-                    <columns small="7"><span class="list__heading">{{listOne.column_two_heading}}</span></columns>
+                    <columns small="7"><span class="list__heading">{{na_listOne.column_two_heading}}</span></columns>
                     <columns small="2">
-                      <p class="list__heading text-center">{{listOne.column_three_heading}}</p>
+                      <p class="list__heading text-center">{{na_listOne.column_three_heading}}</p>
                     </columns>
                     <columns small="2">
-                      <p class="list__heading text-center">{{listOne.column_four_heading}}</p>
+                      <p class="list__heading text-center">{{na_listOne.column_four_heading}}</p>
                     </columns>
                   </row>
                   <spacer size="20"></spacer>
-                  {{#each listOne.list}}
+                  {{#each na_listOne.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{this.serial_no}}</span></columns>
+                    <columns small="1"><span class="list__item-no">{{@index}}.</span></columns>
                     <columns small="9">
                       <p class="list__item-name">{{this.heading}}</p>
                       <p class="list__item-sub-name">{{this.sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.value}}</p>
+                      <p class="list__item-value text-center">{{this.pageviews}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.uniques}}</p>
+                      <p class="list__item-value text-center">{{this.visits}}</p>
                       {{#if this.change}}
                       <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
                       {{/if}}
@@ -133,7 +133,7 @@
                   <row>
                     <columns>
                       <p class="text-right">
-                        <a href="{{listOne.link_url}}" class="list__item-link">{{listOne.link_label}}</a>
+                        <a href="{{na_listOne.link_url}}" class="list__item-link">{{na_listOne.link_label}}</a>
                       </p>
                     </columns>
                   </row>
@@ -143,18 +143,18 @@
             <spacer size="30"></spacer>
             <row>
               <columns>
-                <p class="email__sub-heading">{{graphThree.heading}}</p>
+                <p class="email__sub-heading">{{na_graphThree.heading}}</p>
                 <div class="graph graph--two">
                   <row>
                     <columns small="8">
                       <div class="text-left">
                         <p class="graph__heading">
-                          <span class="graph__heading__value">{{graphThree.current_value}}</span>
-                          <span class="graph__heading__label">{{graphThree.current_value_label}}</span>
+                          <span class="graph__heading__value">{{na_graphThree.current_value}}</span>
+                          <span class="graph__heading__label">{{na_graphThree.current_value_label}}</span>
                         </p>
                         <p class="graph__sub-heading">
-                          <span class="graph__sub-heading__value">{{graphThree.previous_value}}</span>
-                          <span class="graph__sub-heading__label">{{graphThree.previous_value_label}}</span>
+                          <span class="graph__sub-heading__value">{{na_graphThree.previous_value}}</span>
+                          <span class="graph__sub-heading__label">{{na_graphThree.previous_value_label}}</span>
                         </p>
                       </div>
                     </columns>
@@ -164,7 +164,7 @@
                     </columns>
                   </row>
                   <row class="graph__graph">
-                    {{#each graphThree.graph}}
+                    {{#each na_graphThree.graph}}
                     <td class="graph__bar-container" style="width: {{this.bar_width}}; padding: 0 1%; vertical-align: bottom; padding-bottom: 0 !important;">
                       <row>
                         <td style="height: 170px; vertical-align: bottom; padding: 0 5px;">
@@ -178,7 +178,7 @@
                     {{/each}}
                   </row>
                   <row>
-                    {{#each graphThree.graph}}
+                    {{#each na_graphThree.graph}}
                     <th width="{{this.bar_width}}">
                       <p class="graph__label">{{this.label}}</p>
                       <p class="graph__label__value">{{this.value}}</p>
@@ -192,7 +192,7 @@
             <spacer size="30"></spacer>
             <row>
               <columns>
-                <h3 class="email__sub-heading">{{listTwo.heading}}</h3>
+                <h3 class="email__sub-heading">{{na_listTwo.heading}}</h3>
               </columns>
             </row>
             <spacer size="15"></spacer>
@@ -201,33 +201,27 @@
                 <div class="list">
                   <row>
                     <columns small="1"></columns>
-                    <columns small="7"><span class="list__heading">{{listTwo.column_two_heading}}</span></columns>
+                    <columns small="7"><span class="list__heading">{{na_listTwo.column_two_heading}}</span></columns>
                     <columns small="2">
-                      <p class="list__heading text-center">{{listTwo.column_three_heading}}</p>
+                      <p class="list__heading text-center">{{na_listTwo.column_three_heading}}</p>
                     </columns>
                     <columns small="2">
-                      <p class="list__heading text-center">{{listTwo.column_four_heading}}</p>
+                      <p class="list__heading text-center">{{na_listTwo.column_four_heading}}</p>
                     </columns>
                   </row>
                   <spacer size="20"></spacer>
-                  {{#each listTwo.list}}
+                  {{#each na_listTwo.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{this.serial_no}}</span></columns>
+                    <columns small="1"><span class="list__item-no">{{@index}}.</span></columns>
                     <columns small="7">
                       <p class="list__item-name">{{this.heading}}</p>
                       <p class="list__item-sub-name">{{this.sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.value}}</p>
-                      {{#if this.change}}%
-                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
-                      {{/if}}
+                      <p class="list__item-value text-center">{{this.pageviews}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.value}}</p>
-                    </columns>
-                    <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.uniques}}</p>
+                      <p class="list__item-value text-center">{{this.visits}}</p>
                       {{#if this.change}}%
                       <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}</span></p>
                       {{/if}}
@@ -238,7 +232,7 @@
                   <row>
                     <columns>
                       <p class="text-right">
-                        <a href="{{listTwo.link_url}}" class="list__item-link">{{listTwo.link_label}}</a>
+                        <a href="{{na_listTwo.link_url}}" class="list__item-link">{{na_listTwo.link_label}}</a>
                       </p>
                     </columns>
                   </row>
@@ -247,15 +241,15 @@
             </row>
             <spacer size="30"></spacer>
             <center>
-              <button class="radius small" href="{{email.dashboard_url}}">Go to Dashboard</button>
+              <button class="radius small" href="{{na_email.dashboard_url}}">Go to Dashboard</button>
             </center>
             <spacer size="35"></spacer>
           </container>
           <spacer size="20px"></spacer>
           <center>
-            <a class="footer__link" href="{{email.polltype_url}}">Polltype</a>
+            <a class="footer__link" href="{{na_email.polltype_url}}">Polltype</a>
             <span class="footer__divider"></span>
-            <a class="footer__link" href="{{email.quintype_url}}">Quintype</a>
+            <a class="footer__link" href="{{na_email.quintype_url}}">Quintype</a>
           </center>
           <spacer size="25px"></spacer>
         </center>
