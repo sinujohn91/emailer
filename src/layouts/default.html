@@ -113,18 +113,18 @@
                   <spacer size="20"></spacer>
                   {{#each na_listOne.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{@index + 1}}.</span></columns>
+                    <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
                     <columns small="7">
-                      <p class="list__item-name">{{this.heading}}</p>
-                      <p class="list__item-sub-name">{{this.sub_heading}}</p>
+                      <p class="list__item-name">{{this.item_heading}}</p>
+                      <p class="list__item-sub-name">{{this.item_sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.pageviews}}</p>
+                      <p class="list__item-value text-center">{{this.item_pageviews}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.visits}}</p>
-                      {{#if this.change}}
-                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}%</span></p>
+                      <p class="list__item-value text-center">{{this.item_visits}}</p>
+                      {{#if this.item_change}}
+                      <p class="list__item-change text-center"><span style="color: {{this.item_change_color}}">{{this.item_change}}%</span></p>
                       {{/if}}
                     </columns>
                   </row>
@@ -212,18 +212,18 @@
                   <spacer size="20"></spacer>
                   {{#each na_listTwo.list}}
                   <row>
-                    <columns small="1"><span class="list__item-no">{{@index + 1}}.</span></columns>
+                    <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
                     <columns small="7">
-                      <p class="list__item-name">{{this.heading}}</p>
-                      <p class="list__item-sub-name">{{this.sub_heading}}</p>
+                      <p class="list__item-name">{{this.item_heading}}</p>
+                      <p class="list__item-sub-name">{{this.item_sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.pageviews}}</p>
+                      <p class="list__item-value text-center">{{this.item_pageviews}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
-                      <p class="list__item-value text-center">{{this.visits}}</p>
-                      {{#if this.change}}
-                      <p class="list__item-change text-center"><span style="color: {{this.change_color}}">{{this.change}}%</span></p>
+                      <p class="list__item-value text-center">{{this.item_visits}}</p>
+                      {{#if this.item_change}}
+                      <p class="list__item-change text-center"><span style="color: {{this.item_change_color}}">{{this.item_change}}%</span></p>
                       {{/if}}
                     </columns>
                   </row>
