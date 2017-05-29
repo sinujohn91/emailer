@@ -62,6 +62,7 @@
   }
 
   &__heading__value {
+    margin-right: 3px;
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.2px;
@@ -74,7 +75,12 @@
     color: #8f8f8f;
   }
 
+  &__sub-heading {
+    font-size: 0;
+  }
+
   &__sub-heading__value {
+    margin-right: 3px;
     font-size: 9px;
     font-weight: bold;
   }
@@ -89,7 +95,7 @@
     display: inline-block;
     height: 15px;
     width: 15px;
-    margin: 0 5px;
+    margin: 0 5px 0 0;
     background: #59c2ee;
     background: linear-gradient(to top, rgba(146, 218, 248, 0.4), #59c2ee);
 

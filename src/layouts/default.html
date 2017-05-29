@@ -16,35 +16,25 @@
     <tr>
       <td class="center" align="center" valign="top">
         <center>
-          <center style="background: #0586d6; color: #fff">
-            <spacer size="30"></spacer>
+          <center style="background: #0586d6; color: #fff; padding-top: 30px;padding-bottom: 30px;">
             Quintype <strong>Analytics</strong>
-            <spacer size="30"></spacer>
           </center>
-          <center style="background: #0586d6">
+          <center style="background: #0586d6;">
             <container>
-              <row>
-                <columns>
-                  <spacer size="45"></spacer>
-                  <center>
-                    <h1 class="email__heading">{{na_email.heading}}</h1></center>
-                  <center>
-                    <h2 class="email__publisher-name"><a class="email__publisher-link">{{na_email.publisher}}</a> ({{na_email.duration}})</h2></center>
-                  <spacer size="40"></spacer>
-                </columns>
-              </row>
+              <h1 class="email__heading">{{na_email.heading}}</h1>
+              <h2 class="email__publisher-name"><a class="email__publisher-link">{{na_email.publisher}}</a></h2>
             </container>
           </center>
-          <container>
+          <container style="padding-top: 20px">
             <row>
-              <columns large="6">
+              <columns large="6" style="padding-bottom: 25px;">
                 <div class="graph">
                   <p class="graph__heading">
                     <span class="graph__heading__value">{{na_graphOne.current_value}}</span>
                     <span class="graph__heading__label">{{na_graphOne.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="color: {{na_graphOne.change_color}}">{{na_graphOne.previous_value}}</span></span>
+                    <span class="graph__sub-heading__value"><span style="color: {{na_graphOne.change_color}}">{{na_graphOne.previous_value}} </span></span>
                     <span class="graph__sub-heading__label">{{na_graphOne.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
@@ -61,14 +51,14 @@
                   </row>
                 </div>
               </columns>
-              <columns large="6">
+              <columns large="6" style="padding-bottom: 25px">
                 <div class="graph">
                   <p class="graph__heading">
                     <span class="graph__heading__value">{{na_graphTwo.current_value}}</span>
                     <span class="graph__heading__label">{{na_graphTwo.current_value_label}}</span>
                   </p>
                   <p class="graph__sub-heading">
-                    <span class="graph__sub-heading__value"><span style="color: {{na_graphTwo.change_color}}">{{na_graphTwo.previous_value}}</span></span>
+                    <span class="graph__sub-heading__value"><span style="color: {{na_graphTwo.change_color}}">{{na_graphTwo.previous_value}} </span></span>
                     <span class="graph__sub-heading__label">{{na_graphTwo.previous_value_label}}</span>
                   </p>
                   <row class="graph__graph">
@@ -86,21 +76,15 @@
                 </div>
               </columns>
             </row>
-            <spacer size="25"></spacer>
             <center>
               <!-- copy and replace this button code with the generated button code for the second button -->
-              <button class="radius small" href="{{email.dashboard_url}}">Go to Dashboard</button>
+              <button class="radius small" href="{{na_email.dashboard_url}}">Go to Dashboard</button>
             </center>
-            <row>
+            <row style="margin-bottom: 30px">
               <columns>
                 <h3 class="email__sub-heading">{{na_listOne.heading}}</h3>
-              </columns>
-            </row>
-            <spacer size="15"></spacer>
-            <row>
-              <columns>
                 <div class="list">
-                  <row>
+                  <row style="margin-bottom: 20px;">
                     <columns small="1"></columns>
                     <columns small="7"><span class="list__heading">{{na_listOne.column_two_heading}}</span></columns>
                     <columns small="2">
@@ -110,7 +94,6 @@
                       <p class="list__heading text-center">{{na_listOne.column_four_heading}}</p>
                     </columns>
                   </row>
-                  <spacer size="20"></spacer>
                   {{#each na_listOne.list}}
                   <row>
                     <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
@@ -138,10 +121,9 @@
                     </columns>
                   </row>
                 </div>
-                </column>
+              </column>
             </row>
-            <spacer size="30"></spacer>
-            <row>
+            <row style="margin-bottom: 30px">
               <columns>
                 <p class="email__sub-heading">{{na_graphThree.heading}}</p>
                 <div class="graph graph--two">
@@ -153,14 +135,14 @@
                           <span class="graph__heading__label">{{na_graphThree.current_value_label}}</span>
                         </p>
                         <p class="graph__sub-heading">
-                          <span class="graph__sub-heading__value">{{na_graphThree.previous_value}}</span>
+                          <span class="graph__sub-heading__value"><span color="{{na_graphThree.change_color}}">{{na_graphThree.previous_value}}</span></span>
                           <span class="graph__sub-heading__label">{{na_graphThree.previous_value_label}}</span>
                         </p>
                       </div>
                     </columns>
                     <columns small="4" valign="middle">
-                      <span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">{{na_graphThree.current_label_indicator}}</span>
-                      <span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">{{na_graphThree.previous_label_indicator}}</span>
+                      <span style="display: inline-block;width:49%"><span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">{{na_graphThree.current_label_indicator}}</span></span>
+                      <span style="display: inline-block;width: 49%"><span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">{{na_graphThree.previous_label_indicator}}</span></span>
                     </columns>
                   </row>
                   <row class="graph__graph">
@@ -189,17 +171,11 @@
                 </div>
               </columns>
             </row>
-            <spacer size="30"></spacer>
-            <row>
+            <row style="margin-bottom: 30px">
               <columns>
                 <h3 class="email__sub-heading">{{na_listTwo.heading}}</h3>
-              </columns>
-            </row>
-            <spacer size="15"></spacer>
-            <row>
-              <columns>
                 <div class="list">
-                  <row>
+                  <row style="margin-bottom: 20px">
                     <columns small="1"></columns>
                     <columns small="7"><span class="list__heading">{{na_listTwo.column_two_heading}}</span></columns>
                     <columns small="2">
@@ -209,7 +185,6 @@
                       <p class="list__heading text-center">{{na_listTwo.column_four_heading}}</p>
                     </columns>
                   </row>
-                  <spacer size="20"></spacer>
                   {{#each na_listTwo.list}}
                   <row>
                     <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
@@ -237,21 +212,17 @@
                     </columns>
                   </row>
                 </div>
-                </column>
+              </columns>
             </row>
-            <spacer size="30"></spacer>
-            <center>
+            <center style="margin-bottom: 30px;">
               <button class="radius small" href="{{na_email.dashboard_url}}">Go to Dashboard</button>
             </center>
-            <spacer size="35"></spacer>
           </container>
-          <spacer size="20px"></spacer>
-          <center>
+          <center style="margin-bottom: 25px; margin-top: 30px;">
             <a class="footer__link" href="{{na_email.polltype_url}}">Polltype</a>
             <span class="footer__divider"></span>
             <a class="footer__link" href="{{na_email.quintype_url}}">Quintype</a>
           </center>
-          <spacer size="25px"></spacer>
         </center>
       </td>
     </tr>

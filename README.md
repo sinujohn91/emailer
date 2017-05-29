@@ -5,6 +5,7 @@ Replace the first button generated code with the second button generated code.
 ```json
 [{ "name": "na_email",
   "content": {
+    "heading": "Your weekly Analysis Newsletter",
     "subject": "something",
     "publisher": "www.thequint.com",
     "duration": "May 24 - May 30",
@@ -131,8 +132,9 @@ Replace the first button generated code with the second button generated code.
     "current_value_label": "Page Views",
     "previous_value": "80,292",
     "previous_value_label": "Last Week",
-    "current_label_indicator":  "This Week"
-    "previous_label_indicator":  "Last Week"
+    "current_label_indicator":  "This Week",
+    "previous_label_indicator":  "Last Week",
+    "change_color": "#e74c3c",
     "graph": [{
       "percentage": {
         "current": "70",
@@ -237,6 +239,7 @@ Replace the first button generated code with the second button generated code.
     }]
   }
 }]
+
 ```
 
 
