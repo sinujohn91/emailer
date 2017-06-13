@@ -208,7 +208,7 @@ Replace the first button generated code with the second button generated code.
     "link_label": "More Insights",
     "list": [{
       "item_index": "1",
-      "item_heading": "Bill Clinton Co-Authors Thriller Novel ‘The President Is Missing’",
+      "item_heading": "Bill Clinton Co-Authors Thriller Novel &hellip;",
       "item_sub_heading": "By Alok Prasanna Kumar on May 29",
       "item_pageviews": "4,356",
       "item_visits": "2,345"

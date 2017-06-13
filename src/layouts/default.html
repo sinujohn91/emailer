@@ -22,7 +22,10 @@
           <center style="background: #0586d6;">
             <container>
               <h1 class="email__heading">{{na_email.heading}}</h1>
-              <h2 class="email__publisher-name"><a class="email__publisher-link">{{na_email.publisher}}</a></h2>
+              <h2 class="email__publisher-name">
+              <a
+                href="http://{{na_email.publisher}}"
+                class="email__publisher-link">{{na_email.publisher}}</a></h2>
             </container>
           </center>
           <container style="padding-top: 20px">
@@ -98,7 +101,7 @@
                   <row>
                     <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
                     <columns small="7">
-                      <p class="list__item-name">{{this.item_heading}}</p>
+                      <p class="list__item-name"><a href="http://{{this.item_url}}">{{this.item_heading}}</a></p>
                       <p class="list__item-sub-name">{{this.item_sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">
@@ -135,14 +138,16 @@
                           <span class="graph__heading__label">{{na_graphThree.current_value_label}}</span>
                         </p>
                         <p class="graph__sub-heading">
-                          <span class="graph__sub-heading__value"><span color="{{na_graphThree.change_color}}">{{na_graphThree.previous_value}}</span></span>
+                          <span class="graph__sub-heading__value">
+                            <span style="color: {{na_graphThree.change_color}}">{{na_graphThree.previous_value}}</span>
+                          </span>
                           <span class="graph__sub-heading__label">{{na_graphThree.previous_value_label}}</span>
                         </p>
                       </div>
                     </columns>
                     <columns small="4" valign="middle">
-                      <span style="display: inline-block;width:49%"><span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">{{na_graphThree.current_label_indicator}}</span></span>
-                      <span style="display: inline-block;width: 49%"><span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">{{na_graphThree.previous_label_indicator}}</span></span>
+                      <span style="display: inline-block;white-space: nowrap;"><span class="graph__legend graph__legend--current"></span><span class="graph__legend__text">{{na_graphThree.current_label_indicator}}</span></span>
+                      <span style="display: inline-block;white-space: nowrap;"><span class="graph__legend graph__legend--previous"></span><span class="graph__legend__text">{{na_graphThree.previous_label_indicator}}</span></span>
                     </columns>
                   </row>
                   <row class="graph__graph">
@@ -189,7 +194,7 @@
                   <row>
                     <columns small="1"><span class="list__item-no">{{this.item_index}}.</span></columns>
                     <columns small="7">
-                      <p class="list__item-name">{{this.item_heading}}</p>
+                      <p class="list__item-name">{{{this.item_heading}}}</p>
                       <p class="list__item-sub-name">{{this.item_sub_heading}}</p>
                     </columns>
                     <columns small="2" style="text-align: center">

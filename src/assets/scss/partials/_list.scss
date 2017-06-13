@@ -34,11 +34,16 @@
   }
 
   &__item-value {
+    padding: 0 5px;
     margin-bottom: 3px;
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.2px;
     color: #4c4c4c;
+
+    @media (max-width: 800px) {
+      font-size: 12px !important;
+    }
   }
 
   &__item-change {
